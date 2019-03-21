@@ -1,6 +1,5 @@
 "use strict";
 var amap_1 = require("../../mixins/amap.js");
-console.log(amap_1.amapmixinApp);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     name: 'amapSearch',
@@ -14,7 +13,7 @@ exports.default = {
         autocomplateInput: function (val, oldVal) {
             this.$emit('userInput', val);
         },
-        'selectedPoi.location.lat': function selectedPoiLocation(newVal, oldVal) {
+        'selectedPoi.location': function selectedPoiLocation(newVal, oldVal) {
             /**
              * 如果不显示确定按钮, 拖到那里是哪里的话,
              * searchCount 默认为1

@@ -5,6 +5,7 @@
         <input type="text" v-model="autocomplateInput" id="autocomplate-input"
         @keyup.enter="searchDefaultSuggestion" autocomplete="off"
         placeholder="输入详细地址"/>
+      <!--<a v-show="selectedPoi.isMoved" class="amap-search__confirm-btn" @click="setMarkerLocation(selectedPoi)">确定</a>-->
     </div>
   </div>
 </template>

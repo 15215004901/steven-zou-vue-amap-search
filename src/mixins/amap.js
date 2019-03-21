@@ -8,14 +8,9 @@ exports.amapmixinApp = {
             amapCounty: {},
             geocoder: {},
             selectedPoi: {
-                location: {
-                    lat: 0,
-                    lng: 0
-                },
-                poi: {
-
-                },
+                location: {},
                 address: '',
+                poi: {},
                 name: '',
                 isMoved: true
             },
@@ -70,6 +65,8 @@ exports.amapmixinApp = {
                 });
                 AMap.event.addListener(vm.autocomplete, "select", function (e) {
                     //TODO 针对选中的poi实现自己的功能
+                    // this.selectedPoi.poi = e;
+                    vm.selectedPoi.location = e;
                     vm.autocomplateInput = e.poi.name;
                     vm.placeSearch.search(e.poi.name, function (status, result) {
                         if (status === 'complete' && result.info === 'OK') {
@@ -152,9 +149,10 @@ exports.amapmixinApp = {
                 // 默认没有移动过
                 marker.setExtData({ isMoved: true, poiIndex: poiIndex });
                 marker.on('click', function (e) {
+                    console.log("poi")
+                    console.log(e)
                     //  如果信息有更改
-                    vm.selectedPoi.poi = poi;
-                    vm.selectedPoi.location = poi.location;
+                    vm.selectedPoi.location = poi;
                     vm.selectedPoi.address = poi.address;
                     vm.selectedPoi.name = poi.name;
                     vm.selectedPoi.isMoved = this.getExtData().isMoved;
@@ -176,8 +174,9 @@ exports.amapmixinApp = {
                     that.setPosition(new AMap.LngLat(lng, lat));
                     vm.geocoder.getAddress(e.lnglat, function (status, result) {
                         if (status === 'complete' && result.info === 'OK') {
+                            console.log("poi")
+                            console.log(e)
                             var _address = result.regeocode.addressComponent;
-                            vm.selectedPoi.location = e.lnglat;
                             vm.selectedPoi.poi = e;
                             vm.selectedPoi.address = _address.district + _address.street + _address.streetNumber;
                             vm.selectedPoi.name = result.regeocode.formattedAddress;
