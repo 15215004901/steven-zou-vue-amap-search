@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mactive/vue-amap-search.git"
+    "url": "https://github.com/15215004901/steven-zou-vue-amap-search.git"
   },
   "jsnext:main": "dist/lib/main.js",
   "jspm": {
