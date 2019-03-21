@@ -1,0 +1,51 @@
+{
+  "name": "steven-zou-vue-amap-search",
+  "description": "vue2.x amap search component vue2.x 高德地图搜索组件",
+  "version": "0.1.3",
+  "main": "dist/lib/main.js",
+  "author": "mactive <1586905673@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mactive/vue-amap-search.git"
+  },
+  "jsnext:main": "dist/lib/main.js",
+  "jspm": {
+    "main": "dist/lib/main.js",
+    "registry": "npm",
+    "format": "esm"
+  },
+  "keywords": [
+    "vue",
+    "amap",
+    "search"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --config build/webpack.dev.conf.js --open",
+    "build:lib": "webpack --config build/webpack.build.conf.js --progress",
+    "build:example": "webpack --config build/webpack.example.conf.js --progress"
+  },
+  "dependencies": {
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "url-loader": "^0.5.8",
+    "vue": "^2.2.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-latest": "^6.0.0",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "style-loader": "^0.14.1",
+    "ts-loader": "^2.0.1",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
+  }
+}
