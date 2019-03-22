@@ -10,7 +10,6 @@ exports.amapmixinApp = {
             selectedPoi: {
                 location: {},
                 address: '',
-                poi: {},
                 name: '',
                 isMoved: true
             },
@@ -65,11 +64,10 @@ exports.amapmixinApp = {
                 });
                 AMap.event.addListener(vm.autocomplete, "select", function (e) {
                     //TODO 针对选中的poi实现自己的功能
-                    // this.selectedPoi.poi = e;
-                    vm.selectedPoi.location = e;
                     vm.autocomplateInput = e.poi.name;
                     vm.placeSearch.search(e.poi.name, function (status, result) {
                         if (status === 'complete' && result.info === 'OK') {
+                            vm.selectedPoi.location = result
                             // 清除所有覆盖物
                             vm.map.clearMap();
                             // 绘制自己的坐标点
@@ -176,8 +174,8 @@ exports.amapmixinApp = {
                         if (status === 'complete' && result.info === 'OK') {
                             console.log("poi")
                             console.log(e)
+                            vm.selectedPoi.location = e;
                             var _address = result.regeocode.addressComponent;
-                            vm.selectedPoi.poi = e;
                             vm.selectedPoi.address = _address.district + _address.street + _address.streetNumber;
                             vm.selectedPoi.name = result.regeocode.formattedAddress;
                             vm.selectedPoi.isMoved = that.getExtData().isMoved;

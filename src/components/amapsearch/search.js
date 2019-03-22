@@ -18,7 +18,10 @@ exports.default = {
              * 如果不显示确定按钮, 拖到那里是哪里的话,
              * searchCount 默认为1
              */
+            console.log(1)
+            console.log(this.autoConfirm)
             if (this.autoConfirm) {
+                console.log(2)
                 this.selectedPoi.isMoved = false;
                 var loc = JSON.stringify(this.selectedPoi);
                 this.$emit('pickedLocation', JSON.parse(loc));
@@ -67,9 +70,13 @@ exports.default = {
     },
     methods: {
         setMarkerLocation: function () {
+            console.log(3)
             if (this.autoConfirm == false) {
+                console.log(4)
                 this.selectedPoi.isMoved = false;
                 var loc = JSON.stringify(this.selectedPoi);
+                console.log("loc")
+                console.log(loc)
                 this.$emit('pickedLocation', JSON.parse(loc));
             }
         }

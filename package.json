@@ -1,7 +1,7 @@
 {
   "name": "steven-zou-vue-amap-search",
   "description": "vue2.x amap search component vue2.x 高德地图搜索组件",
-  "version": "0.0.3",
+  "version": "0.0.9",
   "main": "dist/lib/main.js",
   "author": " <1586905673@qq.com>",
   "license": "MIT",

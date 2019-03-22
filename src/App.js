@@ -21,11 +21,11 @@ exports.default = {
     methods: {
         handleUserInput: function (_input) {
             this.userInput = _input;
-            console.log(this.userInput)
         },
         handlePickedLocation: function (location) {
+            console.log("location")
+            console.log(location)
             this.pickedLocation.location = location;
-            console.log(this.pickedLocation.location)
         }
     },
     components: {
